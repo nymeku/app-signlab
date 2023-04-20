@@ -62,8 +62,8 @@ const Sidebar = () => {
 						<ul className="px-4 text-sm font-medium flex-1">
 							{navigation.map((item, idx) => (
 								<li key={idx}>
-									<a href={item.href} className="flex items-center gap-x-2 text-gray-600 p-2 rounded-lg  hover:bg-gray-50 active:bg-gray-100 duration-150">
-										<div className="text-gray-500">{item.icon}</div>
+									<a href={item.href} className="flex items-center gap-x-2 text-white p-2 rounded-lg  hover:bg-[#805ad5] active:bg-[#805ad5] duration-150">
+										<div className="text-white">{item.icon}</div>
 										{item.name}
 									</a>
 								</li>
@@ -73,8 +73,8 @@ const Sidebar = () => {
 							<ul className="px-4 pb-4 text-sm font-medium">
 								{navsFooter.map((item, idx) => (
 									<li key={idx}>
-										<a href={item.href} className="flex items-center gap-x-2 text-gray-600 p-2 rounded-lg  hover:bg-gray-50 active:bg-gray-100 duration-150">
-											<div className="text-gray-500">{item.icon}</div>
+										<a href={item.href} className="flex items-center gap-x-2 text-white p-2 rounded-lg  hover:bg-[#805ad5] active:bg-[#805ad5] duration-150">
+											<div className="text-white">{item.icon}</div>
 											{item.name}
 										</a>
 									</li>
