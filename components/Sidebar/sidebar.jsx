@@ -45,8 +45,8 @@ const Sidebar = () => {
                             {
                                 navigation.map((item, idx) => (
                                     <li key={idx}>
-                                        <a href={item.href} className="flex items-center gap-x-2 text-gray-600 p-2 rounded-lg  hover:bg-gray-50 active:bg-gray-100 duration-150">
-                                            <div className="text-gray-500">{item.icon}</div>
+                                        <a href={item.href} className="flex items-center gap-x-2 text-white p-2 rounded-lg  hover:bg-[#7338db] active:bg-gray-100 duration-150">
+                                            <div className="text-white">{item.icon}</div>
                                             {item.name}
                                         </a>
                                     </li>
@@ -58,8 +58,8 @@ const Sidebar = () => {
                                 {
                                     navsFooter.map((item, idx) => (
                                         <li key={idx}>
-                                            <a href={item.href} className="flex items-center gap-x-2 text-gray-600 p-2 rounded-lg  hover:bg-gray-50 active:bg-gray-100 duration-150">
-                                                <div className="text-gray-500">{item.icon}</div>
+                                            <a href={item.href} className="flex items-center gap-x-2 text-white p-2 rounded-lg  hover:bg-[#7338db] active:bg-gray-100 duration-150">
+                                                <div className="text-white">{item.icon}</div>
                                                 {item.name}
                                             </a>
                                         </li>
@@ -70,10 +70,10 @@ const Sidebar = () => {
                                 <div className="flex items-center gap-x-4">
                                     <img src="https://randomuser.me/api/portraits/women/79.jpg" className="w-12 h-12 rounded-full" />
                                     <div>
-                                        <span className="block text-gray-700 text-sm font-semibold">Arnaud Andrieu</span>
+                                        <span className="block text-white text-sm font-semibold">Arnaud Andrieu</span>
                                         <a
                                             href="/profile"
-                                            className="block mt-px text-gray-600 hover:text-indigo-600 text-xs"
+                                            className="block mt-px text-white hover:text-indigo-600 text-xs"
                                         >
                                             Mon profil
                                         </a>
