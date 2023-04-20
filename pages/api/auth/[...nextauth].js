@@ -1,9 +1,8 @@
-import { generateAuthToken, sendVerificationRequest } from "@/src/lib/utils/mailer"
-import nextAuth, { Profile } from "next-auth"
+import { generateAuthToken, sendVerificationRequest } from "@/lib/mailer"
+import nextAuth from "next-auth"
 import EmailProvider from "next-auth/providers/email"
-import GoogleProvider from "next-auth/providers/google"
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
-import prisma from "@/src/prisma"
+import prisma from "@/lib/prisma"
 
 export default nextAuth({
 	adapter: PrismaAdapter(prisma),
