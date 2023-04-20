@@ -25,19 +25,11 @@ export default function Login() {
 							<Input type="email" required className="w-full mt-2 text-gray-300 bg-gray-800 focus:bg-gray-900 focus:border-gray-800" />
 						</div>
 						<div>
-							<label className="font-medium">Password</label>
+							<label className="font-medium">Mot de passe</label>
 							<Input type="password" required className="w-full mt-2 text-gray-300 bg-gray-800 focus:bg-gray-900 focus:border-gray-800" />
 						</div>
 						<Button className="w-full text-gray-800 bg-gray-100 hover:bg-gray-200 ring-offset-2 focus:ring rounded-lg">Connexion</Button>
 					</form>
-					<div>
-					<p className="text-center mt-3">
-								Pas de compte ?{" "}
-								<Link href="/register" className="font-medium text-purple-500 hover:text-purple-600 duration-150">
-									S'inscrire
-								</Link>
-					</p>
-					</div>
 				</div>
 			</main>
 		</>
