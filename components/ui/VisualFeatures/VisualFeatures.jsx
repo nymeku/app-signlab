@@ -21,7 +21,7 @@ const VisualFeatures = () => {
 			<div className="custom-screen text-gray-300">
 				<div className="max-w-xl mx-auto text-center">
 					<h2 className="text-gray-50 text-3xl font-semibold sm:text-4xl">Facilitez vos échanges en langue des signes avec Sign Lab</h2>
-					<p className="mt-3">à l'aide d'une intelligence artificielle entraîné spécifiquement pour la langue des signes, vos échanges ne sont plus qu'à une portée de mains</p>
+					<p className="mt-3">À l'aide d'une intelligence artificielle entraîné spécifiquement pour la langue des signes, vos échanges ne sont plus qu'à une portée de mains</p>
 				</div>
 				<div className="mt-12">
 					<ul className="space-y-8 gap-x-6 sm:flex sm:space-y-0">

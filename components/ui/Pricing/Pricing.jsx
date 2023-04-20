@@ -6,46 +6,45 @@ const Pricing = () => {
 
     const plans = [
         {
-            name: "Basic plan",
-            desc: "For new creators building their list",
+            name: "Basic",
+            desc: "Pour essayer la puissance de Sign Lab",
             price: 0,
             isMostPop: false,
             features: [
-                "300 emails/day",
-                "Customizable Email Templates",
-                "Drag & Drop Editor",
-                "Transactional Emails",
-                "SMS & WhatsApp Campaigns",
-                "Phone support",
-
+                "300 traductions par jour",
+                "Traduction en temps réel",
+                "Suivi des traductions",
+                "1 utilisateur",
+                "Support technique",
+                "Accès à la documentation",
             ],
         },
         {
             name: "Starter",
-            desc: "Ideal for growing businesses",
+            desc: "Idéal pour les petites entreprises",
             price: 12,
             isMostPop: true,
             features: [
-                "From 20k emails/month",
-                "Marketing Automation",
-                "A/B testing",
-                "Advanced statistics",
-                "Multi-user access",
-                "Send time optimization",
+                "5000 traductions par jour",
+                "Personnalisation des traductions",
+                "Statistiques avancées",
+                "Gestion des utilisateurs",
+                "5 utilisateurs",
+                "Support technique",
             ],
         },
         {
             name: "Business",
-            desc: "Built for marketing managers",
+            desc: "Idéal pour les grandes entreprises",
             price: 32,
             isMostPop: false,
             features: [
-                "Everything in Starter",
-                "Enterprise-grade Security",
-                "Advanced Integrations",
-                "Sub-account Management",
-                "Tailored Onboarding",
-                "Personalized support",
+                "Traductions illimitées",
+                "Personnalisation des traductions",
+                "Statistiques avancées",
+                "IA personnalisée",
+                "Utilisateurs illimités",
+                "Support personnalisé",
             ],
         },
     ];
@@ -56,7 +55,7 @@ const Pricing = () => {
         <SectionWrapper id="pricing" className='custom-screen'>
             <div className='relative max-w-xl mx-auto text-center'>
                 <h2 className='text-gray-50 text-3xl font-semibold sm:text-4xl'>
-                    Find a plan to power your business
+                    Choisissez l'offre qui vous convient
                 </h2>
             </div>
             <LayoutEffect
@@ -107,7 +106,7 @@ const Pricing = () => {
                                     </ul>
                                     <div className="pt-8">
                                         <Button className={`w-full rounded-full text-white ring-offset-2 focus:ring ${item.isMostPop ? "bg-purple-600 hover:bg-purple-500 focus:bg-purple-700 ring-purple-600" : "bg-gray-800 hover:bg-gray-700 ring-gray-800"}`}>
-                                            Get Started
+                                            Commencer
                                         </Button>
                                     </div>
                                 </div>

@@ -18,7 +18,7 @@ const CTA = () => (
 					<div className="relative z-10">
 						<div className="max-w-xl mx-auto text-center">
 							<h2 className="text-gray-50 text-3xl font-semibold sm:text-4xl">Faites vous comprendre par tous grâce à l'IA</h2>
-							<p className="mt-5 text-gray-300">Signlab est l'outil parfait ! Notre modèle de reconnaissance des signes vous permet de traduire à pleine puissance.</p>
+							<p className="mt-5 text-gray-300">Signlab est l'outil parfait ! Notre modèle de reconnaissance des signes vous permet de traduire à pleine puissance</p>
 						</div>
 						<div className="mt-5 flex justify-center font-medium text-sm">
 							<NavLink href="/#pricing" className="flex items-center text-white bg-purple-600 hover:bg-purple-500 active:bg-purple-700 ">
