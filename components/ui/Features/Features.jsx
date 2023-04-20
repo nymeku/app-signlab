@@ -40,7 +40,7 @@ const Features = () => {
 				</svg>
 			),
 			title: "Personalized Email Experiences",
-			desc: "Mailgo uses AI to create personalized emails for each recipient based on their past interactions with the brand.",
+			desc: "Signlab uses AI to create personalized emails for each recipient based on their past interactions with the brand.",
 		},
 		{
 			icon: (
