@@ -46,7 +46,7 @@ const Navbar = () => {
 								Se connecter
 							</Link>
 							<NavLink
-								href="/pricing"
+								href="#pricing"
 								className="flex items-center justify-center gap-x-1 text-sm text-white font-medium custom-btn-bg border border-gray-500 active:bg-gray-900 md:inline-flex"
 							>
 								Commencer
