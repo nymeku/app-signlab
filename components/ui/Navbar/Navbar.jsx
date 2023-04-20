@@ -49,7 +49,7 @@ const Navbar = () => {
 								href="#pricing"
 								className="flex items-center justify-center gap-x-1 text-sm text-white font-medium custom-btn-bg border border-gray-500 active:bg-gray-900 md:inline-flex"
 							>
-								Commencer
+								Nos offres
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
 									<path
 										fillRule="evenodd"
