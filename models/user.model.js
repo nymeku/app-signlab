@@ -1,5 +1,5 @@
 export const getUserBySession = async (session) => {
-	if (session.user?.id) {
+	if (session.user.id) {
 		return db_users.getUserById(session.user?.id)
 	} else if (session.user.email) {
 		return db_users.getUserByEmail(session.user.email)
