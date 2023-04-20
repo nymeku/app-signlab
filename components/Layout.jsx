@@ -2,7 +2,7 @@ import Head from "next/head"
 import Footer from "./ui/Footer"
 import Navbar from "./ui/Navbar"
 
-const Layout = ({ children, user }) => {
+const Layout = ({ children }) => {
 	return (
 		<>
 			<Head>
