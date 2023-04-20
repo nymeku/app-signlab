@@ -1,5 +1,5 @@
 import { generateAuthToken, sendVerificationRequest } from "@/lib/mailer"
-import nextAuth from "next-auth"
+import nextAuth, { Profile } from "next-auth"
 import EmailProvider from "next-auth/providers/email"
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import prisma from "@/lib/prisma"
@@ -20,7 +20,6 @@ export default nextAuth({
 
 	pages: {
 		signIn: "/login",
-		error: "/login",
 	},
 	session: {
 		strategy: "database",
