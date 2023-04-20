@@ -23,7 +23,7 @@ const Navbar = () => {
 	useEffect(() => {
 		document.onclick = (e) => {
 			const target = e.target
-			if (!menuBtnEl.current.contains(target)) setState(false)
+			// if (!menuBtnEl.current.contains(target)) setState(false)
 		}
 	}, [])
 
@@ -54,7 +54,7 @@ const Navbar = () => {
 						</ul>
 						<div className="gap-x-6 items-center justify-end mt-6 space-y-6 md:flex md:space-y-0 md:mt-0">
 							{user ? (
-								<Avatar name={"Arnaud Andrieu"} />
+								<Avatar name={user.name ? user.name : ""} />
 							) : (
 								<>
 									<Link href="/login" className="block hover:text-gray-50">
