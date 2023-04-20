@@ -1,18 +1,19 @@
 import Head from "next/head"
-import Link from "next/link"
+import React from "react"
 import Brand from "@/components/ui/Brand"
-import Button from "@/components/ui/Button"
-import Input from "@/components/ui/Input"
-import { GoogleIcon } from "@/components/Icons"
+import { Button, Input, FormLabel, FormControl } from "@chakra-ui/react"
+import { signIn } from "next-auth/react"
+import { z } from "zod"
 
 export default function Login() {
+	const [email, setEmail] = React.useState("")
 	return (
 		<>
 			<Head>
 				<title>Connexion - Signlab</title>
 			</Head>
 			<main className="w-full h-screen flex flex-col items-center justify-center px-4">
-				<div className="max-w-sm w-full text-gray-300">
+				<div className="max-w-sm w-full ">
 					<div className="text-center">
 						<Brand className="mx-auto w-32" />
 						<div className="mt-5 space-y-2">
@@ -20,15 +21,13 @@ export default function Login() {
 						</div>
 					</div>
 					<form onSubmit={(e) => e.preventDefault()} className="mt-8 space-y-5">
-						<div>
-							<label className="font-medium">Email</label>
-							<Input type="email" required className="w-full mt-2 text-gray-300 bg-gray-800 focus:bg-gray-900 focus:border-gray-800" />
-						</div>
-						<div>
-							<label className="font-medium">Mot de passe</label>
-							<Input type="password" required className="w-full mt-2 text-gray-300 bg-gray-800 focus:bg-gray-900 focus:border-gray-800" />
-						</div>
-						<Button className="w-full text-gray-800 bg-gray-100 hover:bg-gray-200 ring-offset-2 focus:ring rounded-lg">Connexion</Button>
+						<FormControl>
+							<FormLabel className="font-medium text-gray-300">Email</FormLabel>
+							<Input type="email" required color={"gray.300"} onChange={(event) => setEmail(event.target.value)} value={email} />
+						</FormControl>
+						<Button colorScheme="gray" w={"100%"} isDisabled={!z.string().email().safeParse(email).success} onClick={() => signIn("email", { email })}>
+							Connexion
+						</Button>
 					</form>
 				</div>
 			</main>

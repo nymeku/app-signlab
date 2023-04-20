@@ -20,6 +20,7 @@ export default nextAuth({
 
 	pages: {
 		signIn: "/login",
+		error: "/login",
 	},
 	session: {
 		strategy: "database",
