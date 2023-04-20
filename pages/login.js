@@ -1,15 +1,9 @@
 import Head from "next/head"
-<<<<<<< HEAD
 import React from "react"
 import Brand from "@/components/ui/Brand"
 import { Button, Input, FormLabel, FormControl } from "@chakra-ui/react"
 import { signIn } from "next-auth/react"
 import { z } from "zod"
-=======
-import Brand from "@/components/ui/Brand"
-import Button from "@/components/ui/Button"
-import Input from "@/components/ui/Input"
->>>>>>> 601b1d496af812bea5b2f513688c9aa3dcbe5432
 
 export default function Login() {
 	const [email, setEmail] = React.useState("")
