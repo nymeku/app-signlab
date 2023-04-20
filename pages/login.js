@@ -25,7 +25,7 @@ export default function Login() {
 							<FormLabel className="font-medium text-gray-300">Email</FormLabel>
 							<Input type="email" required color={"gray.300"} onChange={(event) => setEmail(event.target.value)} value={email} />
 						</FormControl>
-						<Button colorScheme="gray" w={"100%"} isDisabled={!z.string().email().safeParse(email).success} onClick={() => signIn("email", { email, redirect: false })}>
+						<Button colorScheme="gray" w={"100%"} isDisabled={!z.string().email().safeParse(email).success} onClick={() => signIn("email", { email, redirect: false, callbackUrl: "https://signlab.nymeku.com/app" })}>
 							Connexion
 						</Button>
 					</form>

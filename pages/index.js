@@ -21,19 +21,3 @@ export default function Home() {
 		</Layout>
 	)
 }
-
-export const getServerSideProps = () => {
-	const session = getSession()
-	if (session) {
-		return {
-			redirect: {
-				destination: "/app",
-				permanent: false,
-			},
-		}
-	} else {
-		return {
-			props: {},
-		}
-	}
-}

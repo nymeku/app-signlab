@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react"
 import NavHeader from "../NavHeader"
 import NavLink from "../NavLink"
 
-const Navbar = ({ user }) => {
+const Navbar = () => {
 	const [state, setState] = useState(false)
 	const menuBtnEl = useRef()
 
