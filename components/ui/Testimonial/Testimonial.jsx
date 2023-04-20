@@ -1,6 +1,6 @@
 import SectionWrapper from "@/components/SectionWrapper"
 import GradientWrapper from "@/components/GradientWrapper"
-import user1 from "@/public/testimonial/user1.webp"
+import user1 from "@/public/testimonial/user1.svg"
 import user2 from "@/public/testimonial/user2.webp"
 import user3 from "@/public/testimonial/user3.webp"
 import user4 from "@/public/testimonial/user4.webp"
