@@ -3,28 +3,28 @@ import SectionWrapper from "@/components/SectionWrapper"
 
 const faqsList = [
     {
-        q: "What is an email marketing tool?",
-        a: "An email marketing tool is a software application that allows you to create, send, and manage email campaigns. It helps you to create professional-looking emails, track their performance, and analyze the results.",
+        q: "Qu'est-ce qu'un outil de traduction de langue des signes ?",
+        a: "Un outil de traduction de langue des signes est un outil qui vous permet de traduire des milliers de phrases en langue des signes en quelques secondes.",
     },
     {
-        q: "What are the benefits of using an email marketing tool?",
-        a: "An email marketing tool can help you reach a larger audience, increase engagement with your customers, and generate more leads.",
+        q: "Quels sont les bénéfices d'un outil de traduction de langue des signes ?",
+        a: "La satisfaction client est l'un des principaux facteurs de succès d'une entreprise. Un outil de traduction de langue des signes vous permet de traduire des milliers de phrases en langue des signes en quelques secondes.",
     },
     {
-        q: "How do I get started with an email marketing tool?",
-        a: "To get started with an email marketing tool, you will need to sign up for an account with our provider, Once you have signed up for an account, you can start.",
+        q: "Comment démarrer avec un outil de traduction de langue des signes ?",
+        a: "Pour commencer, vous devez créer un compte sur notre site web. Une fois que vous avez créé votre compte, vous pouvez commencer à traduire des milliers de phrases en langue des signes en quelques secondes.",
     },
     {
-        q: "How does an AI-powered email marketing tool work?",
-        a: "Social media is a great place for businesses because it has the An AI-powered email marketing tool works by analyzing customer data to identify patterns and trends in order to create more targeted campaigns.",
+        q: "Qui peut utiliser un outil de traduction de langue des signes ?",
+        a: "Les outils de traduction de langue des signes peuvent être utilisés par toute personne souhaitant communiquer avec des personnes sourdes ou malentendantes"
     },
     {
-        q: "What are the benefits of using an AI-powered email marketing tool?",
-        a: "AI-powered email marketing tools can help marketers save time and money by automating tasks such as segmentation, personalization, content optimization, and more.",
+        q: "Comment une IA de traduction de langue des signes fonctionne-t-elle ?",
+        a: "Le processus de traduction commence par la capture d'une vidéo des gestes de la langue des signes. Cette vidéo est ensuite analysée par l'IA, qui utilise des algorithmes de reconnaissance d'image pour identifier les gestes et les mouvements effectués par l'utilisateur de la langue des signes"
     },
     {
-        q: "Can I sell my digital products using Mailgo?",
-        a: "Of course you can market and sell your digital products and subscriptions with Mailgo to drive higher conversions and save big on fees.",
+        q: "Dans quel cadre puis-je utiliser Sign Lab ?",
+        a: "Un outil de traduction de langue des signes peut être utilisé dans de nombreux contextes pour aider les personnes sourdes ou malentendantes à communiquer plus facilement avec les personnes qui ne comprennent pas la langue des signes",
     }
 ]
 
@@ -33,10 +33,10 @@ const FAQs = () => (
         <div className="custom-screen text-gray-300">
             <div className="max-w-xl text-center xl:mx-auto">
                 <h2 className="text-gray-50 text-3xl font-extrabold sm:text-4xl">
-                    Everything you need to know
+                    Tout ce que vous devez savoir
                 </h2>
                 <p className="mt-3">
-                    Here are the most questions people always ask about.
+                    Nous avons rassemblé les questions les plus fréquemment posées par nos clients
                 </p>
             </div>
             <div className='mt-12'>
