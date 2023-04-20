@@ -22,7 +22,7 @@ const CTA = () => (
 						</div>
 						<div className="mt-5 flex justify-center font-medium text-sm">
 							<NavLink href="/#pricing" className="flex items-center text-white bg-purple-600 hover:bg-purple-500 active:bg-purple-700 ">
-								Start now
+								Commencer
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
 									<path
 										fillRule="evenodd"
