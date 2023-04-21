@@ -2,7 +2,7 @@ import { Button } from "@chakra-ui/react"
 import { signOut } from "next-auth/react"
 import { useRouter } from "next/router"
 import { AiOutlinePlus } from "react-icons/ai"
-import { FcAssistant, FcOpenedFolder, FcReddit } from "react-icons/fc"
+import { FcCallback, FcOpenedFolder, FcReddit } from "react-icons/fc"
 
 const Sidebar = () => {
 	const router = useRouter()
@@ -10,17 +10,17 @@ const Sidebar = () => {
 		{
 			href: "/app/historique",
 			name: "Historique",
-			icon: <FcOpenedFolder size={20}/>,
+			icon: <FcOpenedFolder size={24}/>,
 		},
 		{
 			href: "/app/profil",
 			name: "Profil",
-			icon: <FcReddit size={20}/>,
+			icon: <FcReddit size={24}/>,
 		},
 		{
 			href: "/app/support",
 			name: "Support",
-			icon: <FcAssistant size={20} />,
+			icon: <FcCallback size={24} />,
 		},
 	]
 
@@ -56,7 +56,7 @@ const Sidebar = () => {
 						<ul className="text-sm font-medium flex-1 space-y-4">
 							{navigation.map((item, idx) => (
 								<li key={idx}>
-									<a href={item.href} className="flex items-center gap-x-2 text-white p-2 rounded-lg h-  hover:bg-[#805ad5] active:bg-[#805ad5] duration-150">
+									<a href={item.href} className="flex items-center gap-x-2 text-white p-2 text-base rounded-lg hover:bg-[#805ad5] active:bg-[#805ad5] duration-150">
 										<div className="text-white">{item.icon}</div>
 										{item.name}
 									</a>
