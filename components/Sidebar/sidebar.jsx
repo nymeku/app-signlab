@@ -1,22 +1,24 @@
 import { Button } from "@chakra-ui/react"
 import { signOut } from "next-auth/react"
-import { AiOutlinePlus, AiOutlineUser } from "react-icons/ai"
-import { FcAssistant, FcOpenedFolder, FcPortraitMode } from "react-icons/fc"
+import { useRouter } from "next/router"
+import { AiOutlinePlus } from "react-icons/ai"
+import { FcAssistant, FcOpenedFolder, FcReddit } from "react-icons/fc"
 
 const Sidebar = () => {
+	const router = useRouter()
 	const navigation = [
 		{
-			href: "/historique",
+			href: "/app/historique",
 			name: "Historique",
 			icon: <FcOpenedFolder size={20}/>,
 		},
 		{
-			href: "/profile",
+			href: "/app/profil",
 			name: "Profil",
-			icon: <FcPortraitMode size={20}/>,
+			icon: <FcReddit size={20}/>,
 		},
 		{
-			href: "/support",
+			href: "/app/support",
 			name: "Support",
 			icon: <FcAssistant size={20} />,
 		},
@@ -48,7 +50,7 @@ const Sidebar = () => {
 						</a>
 					</div>
 					<div className="flex-1 flex flex-col h-full overflow-auto">
-						<Button colorScheme="purple" leftIcon={<AiOutlinePlus size={"24px"} />} mb={"40px"}>
+						<Button colorScheme="purple" leftIcon={<AiOutlinePlus size={"24px"} />} mb={"40px"} onClick={() => router.push('/app/traduction')}>
 							Nouvelle Traduction
 						</Button>
 						<ul className="text-sm font-medium flex-1 space-y-4">
