@@ -15,6 +15,7 @@ export const getUserById = async (id) => {
 		},
 		select: {
 			email: true,
+			name: true,
 		},
 	})
 }
@@ -26,6 +27,7 @@ export const getUserByEmail = async (email) => {
 		},
 		select: {
 			email: true,
+			name: true,
 		},
 	})
 }

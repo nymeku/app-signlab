@@ -10,12 +10,12 @@ const Sidebar = () => {
 		{
 			href: "/app/historique",
 			name: "Historique",
-			icon: <FcOpenedFolder size={24}/>,
+			icon: <FcOpenedFolder size={24} />,
 		},
 		{
 			href: "/app/profil",
 			name: "Profil",
-			icon: <FcReddit size={24}/>,
+			icon: <FcReddit size={24} />,
 		},
 		{
 			href: "/app/support",
@@ -42,7 +42,7 @@ const Sidebar = () => {
 
 	return (
 		<>
-			<nav className="fixed top-0 left-0 w-full h-full border-r border-[#333C4B] bg-#1f2937 space-y-8 sm:w-80 px-6 pt-8">
+			<nav className="fixed top-0 left-0 h-full border-r border-[#333C4B] bg-#1f2937 space-y-8 w-[250px] px-6 pt-8">
 				<div className="flex flex-col h-full">
 					<div className="h-20 flex items-center px-8 mb-6">
 						<a href="#" className="flex-none">
@@ -50,7 +50,7 @@ const Sidebar = () => {
 						</a>
 					</div>
 					<div className="flex-1 flex flex-col h-full overflow-auto">
-						<Button colorScheme="purple" leftIcon={<AiOutlinePlus size={"24px"} />} mb={"40px"} onClick={() => router.push('/app/traduction')}>
+						<Button colorScheme="purple" leftIcon={<AiOutlinePlus size={"24px"} />} mb={"40px"} onClick={() => router.push("/app/traduction")}>
 							Nouvelle Traduction
 						</Button>
 						<ul className="text-sm font-medium flex-1 space-y-4">
