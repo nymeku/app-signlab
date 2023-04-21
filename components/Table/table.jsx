@@ -1,3 +1,5 @@
+import { AiOutlinePlus } from 'react-icons/ai'
+
 const Table = () => {
 
     const tableItems = [
@@ -31,7 +33,7 @@ const Table = () => {
             job: "Bagagiste Air France",
             translation: "Où se trouvent la porte d'emb...",
             position: "Lille",
-            duration: "6min30s"
+            duration: "1min"
         },
         {
             avatar: "https://images.unsplash.com/photo-1439911767590-c724b615299d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
@@ -39,7 +41,7 @@ const Table = () => {
             job: "Douanier Air France",
             translation: "Vous avez besoin de mes...",
             position: "Rennes",
-            duration: "6min30s"
+            duration: "3min42s"
         },
     ]
 
@@ -51,16 +53,8 @@ const Table = () => {
                         Historique des traductions
                     </h3>
                     <p className="text-white mt-2">
-                        Vous pouvez retrouver ici toutes les traductions effectuées sur votre compte
+                        Vous retrouvez ici toutes les traductions effectuées sur le compte de votre compagnie
                     </p>
-                </div>
-                <div className="mt-3 md:mt-0">
-                    <a
-                        href="javascript:void(0)"
-                        className="inline-block px-4 py-2 text-white duration-150 font-medium bg-indigo-600 rounded-lg hover:bg-indigo-500 active:bg-indigo-700 md:text-sm"
-                    >
-                        Nouvelle traduction
-                    </a>
                 </div>
             </div>
             <div className="mt-12 shadow-sm border rounded-lg overflow-x-auto">
@@ -90,10 +84,10 @@ const Table = () => {
                                     <td className="px-6 py-4 whitespace-nowrap">{item.position}</td>
                                     <td className="px-6 py-4 whitespace-nowrap">{item.duration}</td>
                                     <td className="text-right px-6 whitespace-nowrap">
-                                        <a href="javascript:void()" className="py-2 px-3 font-medium text-indigo-600 hover:text-indigo-500 duration-150 hover:bg-gray-50 rounded-lg">
+                                        <a href="javascript:void()" className="py-2 px-3 font-medium text-indigo-600 hover:text-white duration-150 hover:bg-[#805ad5] rounded-lg">
                                             Modifier
                                         </a>
-                                        <button href="javascript:void()" className="py-2 leading-none px-3 font-medium text-red-600 hover:text-red-500 duration-150 hover:bg-gray-50 rounded-lg">
+                                        <button href="javascript:void()" className="py-2 leading-none px-3 font-medium text-red-600 hover:text-white duration-150 hover:bg-red-500 rounded-lg">
                                             Supprimer
                                         </button>
                                     </td>
