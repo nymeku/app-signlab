@@ -8,7 +8,9 @@ const AppLayout = ({ children }) => {
 			<Box maxW={"250px"} position={"fixed"} top={0} left={0}>
 				<Sidebar />
 			</Box>
-			{children}
+			<Box w={'100%'} padding={'20px 20px 20px 250px'}>
+				{children}
+			</Box>
 		</Box>
 	)
 }
