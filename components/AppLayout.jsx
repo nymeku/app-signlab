@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar/sidebar"
 
 const AppLayout = ({ children }) => {
 	return (
-		<Box w={"100vw"} h={"100vh"}>
+		<Box w={"100vw"} h={"100vh"} color={"whiteAlpha.800"}>
 			<Box position={"fixed"} top={0} left={0}>
 				<Sidebar />
 			</Box>
