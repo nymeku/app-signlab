@@ -1,3 +1,5 @@
+import prisma from "@/lib/prisma"
+
 export const getUserBySession = async (session) => {
 	if (session?.user?.id) {
 		return getUserById(session.user?.id)
