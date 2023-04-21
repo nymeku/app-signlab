@@ -1,8 +1,8 @@
 export const getUserBySession = async (session) => {
-	if (session.user.id) {
-		return db_users.getUserById(session.user?.id)
-	} else if (session.user.email) {
-		return db_users.getUserByEmail(session.user.email)
+	if (session?.user?.id) {
+		return getUserById(session.user?.id)
+	} else if (session?.user?.email) {
+		return getUserByEmail(session.user.email)
 	} else return false
 }
 
@@ -11,7 +11,9 @@ export const getUserById = async (id) => {
 		where: {
 			id,
 		},
-		...selector,
+		select: {
+			email: true,
+		},
 	})
 }
 
@@ -20,6 +22,8 @@ export const getUserByEmail = async (email) => {
 		where: {
 			email,
 		},
-		...selector,
+		select: {
+			email: true,
+		},
 	})
 }

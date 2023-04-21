@@ -1,11 +1,9 @@
+import AppLayout from "@/components/AppLayout"
+
 const { default: Sidebar } = require("@/components/Sidebar/sidebar")
 
 const MainApp = () => {
-	return (
-		<div>
-			<Sidebar />
-		</div>
-	)
+	return <AppLayout></AppLayout>
 }
 
 export default MainApp

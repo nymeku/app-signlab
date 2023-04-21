@@ -1,5 +1,7 @@
 import { Button } from "@chakra-ui/react"
+import { signOut } from "next-auth/react"
 import { AiOutlinePlus } from "react-icons/ai"
+
 const Sidebar = () => {
 	const navigation = [
 		{
@@ -49,9 +51,9 @@ const Sidebar = () => {
 	return (
 		<>
 			<nav className="fixed top-0 left-0 w-full h-full border-r border-[#333C4B] bg-#1f2937 space-y-8 sm:w-80 px-6 pt-8">
-				<div class="flex flex-col h-full">
+				<div className="flex flex-col h-full">
 					<div className="h-20 flex items-center px-8 mb-6">
-						<a href="javascript:void(0)" className="flex-none">
+						<a href="#" className="flex-none">
 							<img src="/signlab.svg" width={140} className="mx-auto" />
 						</a>
 					</div>
@@ -73,10 +75,22 @@ const Sidebar = () => {
 							<ul className="px-4 pb-4 text-sm font-medium">
 								{navsFooter.map((item, idx) => (
 									<li key={idx}>
-										<a href={item.href} className="flex items-center gap-x-2 text-white p-2 rounded-lg  hover:bg-[#805ad5] active:bg-[#805ad5] duration-150">
-											<div className="text-white">{item.icon}</div>
-											{item.name}
-										</a>
+										<div
+											onClick={() => signOut()}
+											href={item.href}
+											className="flex items-center gap-x-2 text-white p-2 rounded-lg  hover:bg-[#805ad5] active:bg-[#805ad5] duration-150 cursor-pointer"
+										>
+											<div className="text-white">
+												<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+													<path
+														strokeLinecap="round"
+														strokeLinejoin="round"
+														d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+													/>
+												</svg>
+											</div>
+											Déconnexion
+										</div>
 									</li>
 								))}
 							</ul>

@@ -38,7 +38,7 @@ const Hero = () => (
 							</NavLink>
 						</div>
 					</div>
-					<GradientWrapper className="mt-16 sm:mt-28" wrapperClassName="max-w-3xl h-[250px] top-12 inset-0 sm:h-[300px] lg:h-[650px]">
+					<GradientWrapper className="mt-16 sm:mt-28" wrapperclassname="max-w-3xl h-[250px] top-12 inset-0 sm:h-[300px] lg:h-[650px]">
 						<Image src={HeroImg} className="shadow-lg rounded-2xl" alt="Signlab" />
 					</GradientWrapper>
 				</div>

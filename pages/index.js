@@ -9,10 +9,20 @@ import VisualFeatures from "@/components/ui/VisualFeatures"
 import { getUserBySession } from "@/models/user.model"
 import { getSession } from "next-auth/react"
 import React from "react"
+import { z } from "zod"
 
 export const HomeContext = React.createContext(null)
 
-export default function Home({ user }) {
+const CompleteUser = z.object({
+	email: z.string().email(),
+})
+
+export default function Home({ userFromServer }) {
+	let user = JSON.parse(userFromServer ?? "{}")
+	if (!CompleteUser.safeParse(user).success) {
+		user = null
+	}
+
 	return (
 		<HomeContext.Provider value={{ user }}>
 			<Layout>
@@ -28,24 +38,29 @@ export default function Home({ user }) {
 	)
 }
 
-export const getServerSideProps = () => {
-	const session = getSession()
+export const getServerSideProps = async (context) => {
+	const session = await getSession(context)
+	console.log({ session })
 	if (session) {
-		const user = getUserBySession(session)
-		if (!user) {
+		const userFromServer = await getUserBySession(session)
+		if (!userFromServer) {
 			return {
-				props: {},
+				props: {
+					user: null,
+				},
 			}
 		} else {
 			return {
 				props: {
-					user: JSON.stringify(user),
+					userFromServer: JSON.stringify(userFromServer),
 				},
 			}
 		}
 	} else {
 		return {
-			props: {},
+			props: {
+				user: null,
+			},
 		}
 	}
 }

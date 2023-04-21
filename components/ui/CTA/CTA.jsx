@@ -6,7 +6,7 @@ import LayoutEffect from "@/components/LayoutEffect"
 
 const CTA = () => (
 	<section>
-		<GradientWrapper wrapperClassName="max-w-xs h-[13rem] top-12 inset-0">
+		<GradientWrapper wrapperclassname="max-w-xs h-[13rem] top-12 inset-0">
 			<div className="custom-screen py-28 relative">
 				<LayoutEffect
 					className="duration-1000 delay-300"
