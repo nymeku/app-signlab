@@ -40,7 +40,6 @@ export default function Home({ userFromServer }) {
 
 export const getServerSideProps = async (context) => {
 	const session = await getSession(context)
-	console.log({ session })
 	if (session) {
 		const userFromServer = await getUserBySession(session)
 		if (!userFromServer) {

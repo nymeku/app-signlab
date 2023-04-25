@@ -1,72 +1,50 @@
 import AppLayout from "@/components/AppLayout"
 import WebcamRecorder from "@/components/ui/Webcam/WebcamRecorder"
 import { Box, Heading, HStack, Button } from "@chakra-ui/react"
-import React from "react"
+import React, { useEffect, useState } from "react"
+
 const Translation = () => {
-	const [stream, setStream] = React.useState(false)
-	const videoRef = React.useRef(null)
-
-	const stopStream = () => {
-		if (stream) {
-			stream.getTracks().forEach((track) => {
-				track.stop()
-			})
-			setStream(null)
-		}
-	}
-
-	const launchVideo = () => {
-		var video = document.querySelector("#videoElement")
-		if (navigator.mediaDevices.getUserMedia) {
-			navigator.mediaDevices
-				.getUserMedia({ video: true })
-				.then(function (stream) {
-					video.srcObject = stream
-				})
-				.catch(function (err0r) {
-					console.log("Something went wrong!")
-				})
-		}
-	}
-
-	React.useEffect(() => {
-		if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-			navigator.mediaDevices
-				.getUserMedia({ video: true })
-				.then((stream) => {
-					setStream(stream)
-				})
-				.catch((error) => {
-					console.error(error)
-				})
-		}
+	const [blobs, setBlobs] = React.useState([])
+	const [stop, setStop] = React.useState(false)
+	let video = null 
+	useEffect(() => {
+		video = document.querySelector("#video")
 	}, [])
 
-	React.useEffect(() => {
-		if (stream && videoRef.current) {
-			videoRef.current.srcObject = stream
-			videoRef.current.play()
-		} else {
-			setStream(false)
-		}
-	}, [stream])
+	const stopStream = () => {
+		const download = URL.createObjectURL(new Blob(blobs, { type: "video/webm" }))
+		console.log(download)
+	}
 
-	console.log(stream)
+	const startStream = async (permission) => {
+		video.srcObject = permission
+		const record = new MediaRecorder(permission, { mimeType: "video/webm" })
+		record.addEventListener('dataavailable', (e) => {
+			if (e.data.size > 0) {
+				setBlobs([...blobs, e.data])
+			}
+		})
+		record.start()
+	}
+
+	const askPermission = async () => {	
+		const permission = await navigator.mediaDevices.getUserMedia({video: true})		
+		startStream(permission)
+	}
+
 	return (
 		<AppLayout>
 			<Box>
 				<Heading fontSize={"lg"}>Nouvelle traduction</Heading>
 
-				<HStack>
-					<WebcamRecorder setStream={setStream} stream={stream} videoRef={videoRef} />
-				</HStack>
+				<video id="video" width="320" height="240" autoPlay></video>
 
-				{stream ? (
+				{false ? (
 					<Button colorScheme={"red"} onClick={() => stopStream()}>
 						{"Stop"}
 					</Button>
 				) : (
-					<Button colorScheme="purple" onClick={() => launchVideo()}>
+					<Button colorScheme="purple" onClick={() => askPermission()}>
 						Démarrer
 					</Button>
 				)}

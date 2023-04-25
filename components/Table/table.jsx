@@ -4,81 +4,58 @@ const Table = () => {
 
     const tableItems = [
         {
-            avatar: 'https://api.uifaces.co/our-content/donated/xZ4wg2Xj.jpg',
-            name: "Bertrand Cantat",
-            job: "Douanier Air France",
             translation: "Vous avez 600g de marchand...",
             position: "Paris",
             duration: "1min42s"
         },
         {
-            avatar: "https://randomuser.me/api/portraits/women/79.jpg",
-            name: "Sarah Connor",
-            job: "Hôtesse Air France",
+            
             translation: "Puis-je avoir un café s'il v...",
             position: "Nice",
             duration: "2min30s"
         },
         {
-            avatar: "https://images.unsplash.com/photo-1511485977113-f34c92461ad9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
-            name: "Stéphanie Leblanc",
-            job: "Pilote KLM",
+        
             translation: "Pourquoi prenez-vous les comm...",
             position: "Marseille",
             duration: "6min30s"
         },
         {
-            avatar: "https://randomuser.me/api/portraits/men/86.jpg",
-            name: "Olivier Mine",
-            job: "Bagagiste Air France",
+          
             translation: "Où se trouvent la porte d'emb...",
             position: "Lille",
             duration: "1min"
         },
         {
-            avatar: "https://images.unsplash.com/photo-1439911767590-c724b615299d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
-            name: "Amelia Elijah",
-            job: "Douanier Air France",
+            
             translation: "Vous avez besoin de mes...",
             position: "Rennes",
             duration: "3min42s"
         },
         {
-            avatar: "https://images.unsplash.com/photo-1439911767590-c724b615299d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
-            name: "Amelia Elijah",
-            job: "Douanier Air France",
+       
             translation: "Vous avez besoin de mes...",
             position: "Rennes",
             duration: "3min42s"
         },
         {
-            avatar: "https://images.unsplash.com/photo-1439911767590-c724b615299d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
-            name: "Amelia Elijah",
-            job: "Douanier Air France",
+          
             translation: "Vous avez besoin de mes...",
             position: "Rennes",
             duration: "3min42s"
         },
         {
-            avatar: "https://images.unsplash.com/photo-1439911767590-c724b615299d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
-            name: "Amelia Elijah",
-            job: "Douanier Air France",
+         
             translation: "Vous avez besoin de mes...",
             position: "Rennes",
             duration: "3min42s"
         },
         {
-            avatar: "https://images.unsplash.com/photo-1439911767590-c724b615299d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
-            name: "Amelia Elijah",
-            job: "Douanier Air France",
             translation: "Vous avez besoin de mes...",
             position: "Rennes",
             duration: "3min42s"
         },
         {
-            avatar: "https://images.unsplash.com/photo-1439911767590-c724b615299d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
-            name: "Amelia Elijah",
-            job: "Douanier Air France",
             translation: "Vous avez besoin de mes...",
             position: "Rennes",
             duration: "3min42s"
@@ -101,7 +78,6 @@ const Table = () => {
                 <table className="w-full table-auto text-sm text-left">
                     <thead className="bg-gray-50 text-gray-600 font-medium border-b">
                         <tr>
-                            <th className="py-3 px-6">Opérateur</th>
                             <th className="py-3 px-6">Traduction</th>
                             <th className="py-3 px-6">Position</th>
                             <th className="py-3 px-6">Durée</th>
