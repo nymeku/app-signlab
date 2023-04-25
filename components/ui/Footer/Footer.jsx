@@ -1,3 +1,4 @@
+import Link from "next/link"
 const Footer = () => {
 	return (
 		<footer className="mt-20">
@@ -5,7 +6,7 @@ const Footer = () => {
 				<div className="mt-10 py-8 border-t border-gray-800 items-center justify-between sm:flex">
 					<p className="text-gray-400 text-center">© {new Date().getFullYear()} Signlab Inc. All rights reserved.</p>
 					<div className="flex items-center justify-center gap-x-6 text-gray-500 mt-6 sm:mt-0">
-						<a href="https://www.facebook.com/profile.php?id=100091713593723" target="_blank" aria-label="social media" rel="noreferrer">
+						<Link href="https://www.facebook.com/profile.php?id=100091713593723" target="_blank" aria-label="social media" rel="noreferrer">
 							<svg className="w-6 h-6 hover:text-gray-200 duration-150" fill="none" viewBox="0 0 48 48">
 								<g clipPath="url(#a)">
 									<path
@@ -19,8 +20,8 @@ const Footer = () => {
 									</clipPath>
 								</defs>
 							</svg>
-						</a>
-						<a href="https://twitter.com/SignLab591969" target="_blank" aria-label="social media" rel="noreferrer">
+						</Link>
+						<Link href="https://twitter.com/SignLab591969" target="_blank" aria-label="social media" rel="noreferrer">
 							<svg className="w-6 h-6 hover:text-gray-200 duration-150" fill="none" viewBox="0 0 48 48">
 								<g clipPath="url(#clip0_17_80)">
 									<path
@@ -34,8 +35,8 @@ const Footer = () => {
 									</clipPath>
 								</defs>
 							</svg>
-						</a>
-						<a href="https://www.linkedin.com/in/sign-lab-1ab4b1273/" target="_blank" aria-label="social media" rel="noreferrer">
+						</Link>
+						<Link href="https://www.linkedin.com/in/sign-lab-1ab4b1273/" target="_blank" aria-label="social media" rel="noreferrer">
 							<svg className="w-6 h-6 hover:text-gray-200 duration-150" fill="none" viewBox="0 0 48 48">
 								<g clipPath="url(#clip0_17_68)">
 									<path
@@ -49,7 +50,7 @@ const Footer = () => {
 									</clipPath>
 								</defs>
 							</svg>
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>

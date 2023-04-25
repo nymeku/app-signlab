@@ -4,6 +4,7 @@ import { useRouter } from "next/router"
 import { AiOutlinePlus } from "react-icons/ai"
 import { FcCallback, FcOpenedFolder, FcReddit, FcExport } from "react-icons/fc"
 import { Box } from "@chakra-ui/react"
+import Link from "next/link"
 
 const Sidebar = ({ display }) => {
 	const router = useRouter()
@@ -46,9 +47,9 @@ const Sidebar = ({ display }) => {
 			<nav className="fixed top-0 left-0 h-full border-r border-[#333C4B] bg-#1f2937 space-y-8 w-[250px] px-6 pt-8">
 				<div className="flex flex-col h-full">
 					<div className="h-20 flex items-center px-8 mb-6">
-						<a href="#" className="flex-none">
+						<Link href="#" className="flex-none">
 							<img src="/signlab.svg" width={140} className="mx-auto" />
-						</a>
+						</Link>
 					</div>
 					<div className="flex-1 flex flex-col h-full overflow-auto">
 						<Button colorScheme="purple" leftIcon={<AiOutlinePlus size={"24px"} />} mb={"40px"} onClick={() => router.push("/app/traduction")}>
@@ -57,10 +58,10 @@ const Sidebar = ({ display }) => {
 						<ul className="text-sm font-medium flex-1 space-y-4">
 							{navigation.map((item, idx) => (
 								<li key={idx}>
-									<a href={item.href} className="flex items-center gap-x-2 text-white p-2 text-base rounded-lg hover:bg-[#805ad5] active:bg-[#805ad5] duration-150">
+									<Link href={item.href} className="flex items-center gap-x-2 text-white p-2 text-base rounded-lg hover:bg-[#805ad5] active:bg-[#805ad5] duration-150">
 										<div className="text-white">{item.icon}</div>
 										{item.name}
-									</a>
+									</Link>
 								</li>
 							))}
 						</ul>
@@ -84,9 +85,9 @@ const Sidebar = ({ display }) => {
 									<img src="https://randomuser.me/api/portraits/women/79.jpg" className="w-12 h-12 rounded-full" />
 									<div>
 										<span className="block text-white text-sm font-semibold">Arnaud Andrieu</span>
-										<a href="/profile" className="block mt-px text-white hover:text-indigo-600 text-xs">
+										<Link href="/profile" className="block mt-px text-white hover:text-indigo-600 text-xs">
 											Mon profil
-										</a>
+										</Link>
 									</div>
 								</div>
 							</div>
