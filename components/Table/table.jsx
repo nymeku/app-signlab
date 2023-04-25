@@ -43,6 +43,46 @@ const Table = () => {
             position: "Rennes",
             duration: "3min42s"
         },
+        {
+            avatar: "https://images.unsplash.com/photo-1439911767590-c724b615299d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
+            name: "Amelia Elijah",
+            job: "Douanier Air France",
+            translation: "Vous avez besoin de mes...",
+            position: "Rennes",
+            duration: "3min42s"
+        },
+        {
+            avatar: "https://images.unsplash.com/photo-1439911767590-c724b615299d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
+            name: "Amelia Elijah",
+            job: "Douanier Air France",
+            translation: "Vous avez besoin de mes...",
+            position: "Rennes",
+            duration: "3min42s"
+        },
+        {
+            avatar: "https://images.unsplash.com/photo-1439911767590-c724b615299d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
+            name: "Amelia Elijah",
+            job: "Douanier Air France",
+            translation: "Vous avez besoin de mes...",
+            position: "Rennes",
+            duration: "3min42s"
+        },
+        {
+            avatar: "https://images.unsplash.com/photo-1439911767590-c724b615299d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
+            name: "Amelia Elijah",
+            job: "Douanier Air France",
+            translation: "Vous avez besoin de mes...",
+            position: "Rennes",
+            duration: "3min42s"
+        },
+        {
+            avatar: "https://images.unsplash.com/photo-1439911767590-c724b615299d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
+            name: "Amelia Elijah",
+            job: "Douanier Air France",
+            translation: "Vous avez besoin de mes...",
+            position: "Rennes",
+            duration: "3min42s"
+        },
     ]
 
     return (
