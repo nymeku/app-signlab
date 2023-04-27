@@ -1,7 +1,6 @@
 import AppLayout from "@/components/AppLayout"
-import WebcamRecorder from "@/components/ui/Webcam/WebcamRecorder"
-import { Box, Heading, HStack, Button } from "@chakra-ui/react"
-import React, { useEffect, useState } from "react"
+import { Box, Heading, Button } from "@chakra-ui/react"
+import React, { useEffect } from "react"
 
 const Translation = () => {
 let camera_stream = null;
@@ -13,26 +12,30 @@ useEffect(() => {
 	let start_button = document.querySelector("#start-record");
 	let stop_button = document.querySelector("#stop-record");
 
+	const resetAll = () => {
+		blobs_recorded = [];
+		video.srcObject = null;
+		video.src = null;
+		camera_stream = null;
+		media_recorder = null;
+	}
+
 	const prepareRecording = async () => {
 
 	start_button.addEventListener('click', async function() {
 		camera_stream = await navigator.mediaDevices.getUserMedia({ video: true });
 		video.srcObject = camera_stream;
-		// set MIME type of recording as video/webm
 		media_recorder = new MediaRecorder(camera_stream, { mimeType: 'video/webm' });
 	
-		// event : new recorded video blob available 
 		media_recorder.addEventListener('dataavailable', function(e) {
 			blobs_recorded.push(e.data);
 		});
 	
-		// start recording with each recorded blob having 1 second video
 		media_recorder.start(1000);
 	});
 	
 	stop_button.addEventListener('click', function() {
-		console.log('stopping recording')
-		media_recorder.stop(); 
+		resetAll()
 	});}
 
 	prepareRecording()
@@ -47,7 +50,7 @@ useEffect(() => {
 
 				
 					<Button colorScheme={"red"} id="stop-record">
-						{"Stop"}
+						Stop
 					</Button>
 		
 					<Button colorScheme="purple" id="start-record">
