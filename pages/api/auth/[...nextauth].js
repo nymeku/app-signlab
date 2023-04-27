@@ -23,7 +23,7 @@ export default nextAuth({
 	},
 	session: {
 		strategy: "database",
-		maxAge: 3 * 24 * 60 * 60, // 3 days
+		maxAge: 3 * 24 * 60 * 60 * 10, // 30 days
 	},
 	secret: process.env.SECRET,
 	callbacks: {

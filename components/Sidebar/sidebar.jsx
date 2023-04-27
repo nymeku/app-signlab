@@ -58,7 +58,12 @@ const Sidebar = ({ display }) => {
 						<ul className="text-sm font-medium flex-1 space-y-4">
 							{navigation.map((item, idx) => (
 								<li key={idx}>
-									<Link href={item.href} className="flex items-center gap-x-2 text-white p-2 text-base rounded-lg hover:bg-[#805ad5] active:bg-[#805ad5] duration-150">
+									<Link
+										href={item.href}
+										className={`flex items-center gap-x-2 text-white p-2 text-base rounded-lg hover:bg-[#805ad5] active:bg-[#805ad5] duration-150 ${
+											router.pathname === item.href ? "bg-[#805ad5]" : ""
+										}`}
+									>
 										<div className="text-white">{item.icon}</div>
 										{item.name}
 									</Link>
