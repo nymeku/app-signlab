@@ -9,7 +9,7 @@ const Historique = ({ userFromServer }) => {
 	return (
 		<AppLayout>
 			<Table traductions={user.traductions} />
-			<Pagination />
+			{/* <Pagination /> */}
 		</AppLayout>
 	)
 }

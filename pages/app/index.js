@@ -6,17 +6,17 @@ const MainApp = () => {
 	return <AppLayout></AppLayout>
 }
 
-export default MainApp
-
 export const getServerSideProps = async (context) => {
 	const session = await getSession(context)
-	if (!session) return { redirect: { destination: '/login', permanent: false } }
+	if (!session) return { redirect: { destination: "/login", permanent: false } }
 	const user = await getUserBySession(session)
-	if (!user) return { redirect: { destination: '/login', permanent: false } }
-	
+	if (!user) return { redirect: { destination: "/login", permanent: false } }
+
 	return {
 		props: {
-			user: JSON.stringify(user)
-		}
+			user: JSON.stringify(user),
+		},
 	}
 }
+
+export default MainApp
