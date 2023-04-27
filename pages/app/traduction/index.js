@@ -4,31 +4,38 @@ import { Box, Heading, HStack, Button } from "@chakra-ui/react"
 import React, { useEffect, useState } from "react"
 
 const Translation = () => {
-	const [blobs, setBlobs] = React.useState([])
-	const [stop, setStop] = React.useState(false)
-	let video = null 
+	let video = null
+	let permission = null
+	let record = null
+	let blobs = []
+	const [recording, setRecording] = useState(false)
+
 	useEffect(() => {
-		video = document.querySelector("#video")
+		video = document.getElementById("video")
 	}, [])
 
-	const stopStream = () => {
+	const stopStream = async () => {
 		const download = URL.createObjectURL(new Blob(blobs, { type: "video/webm" }))
-		console.log(download)
+		permission = await navigator.mediaDevices.getUserMedia({video: true})		
+		record = new MediaRecorder(permission, { mimeType: "video/webm" })
+		record.stop()
+		setRecording(false)
 	}
 
 	const startStream = async (permission) => {
+		setRecording(true)
 		video.srcObject = permission
-		const record = new MediaRecorder(permission, { mimeType: "video/webm" })
+		record = new MediaRecorder(permission, { mimeType: "video/webm" })
 		record.addEventListener('dataavailable', (e) => {
 			if (e.data.size > 0) {
-				setBlobs([...blobs, e.data])
+				blobs.push(e.data)
 			}
 		})
 		record.start()
 	}
 
 	const askPermission = async () => {	
-		const permission = await navigator.mediaDevices.getUserMedia({video: true})		
+		permission = await navigator.mediaDevices.getUserMedia({video: true})		
 		startStream(permission)
 	}
 
@@ -39,7 +46,7 @@ const Translation = () => {
 
 				<video id="video" width="320" height="240" autoPlay></video>
 
-				{false ? (
+				{recording ? (
 					<Button colorScheme={"red"} onClick={() => stopStream()}>
 						{"Stop"}
 					</Button>
