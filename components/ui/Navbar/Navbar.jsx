@@ -11,7 +11,6 @@ const Navbar = () => {
 	const [state, setState] = useState(false)
 	const menuBtnEl = useRef()
 	const { user } = React.useContext(HomeContext)
-	console.log({ user })
 
 	const navigation = [
 		{ name: "Fonctionnalités", href: "/#features" },

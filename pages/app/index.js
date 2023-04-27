@@ -2,6 +2,7 @@ import AppLayout from "@/components/AppLayout"
 import { getUserBySession } from "@/models/user.model"
 import { getSession } from "next-auth/react"
 
+
 const MainApp = () => {
 	return <AppLayout></AppLayout>
 }

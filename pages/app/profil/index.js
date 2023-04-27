@@ -9,6 +9,7 @@ import React from "react"
 const userSchema = z.object({
 	email: z.string().email(),
 	name: z.string().optional().nullable(),
+	firstname: z.string().optional().nullable(),
 })
 
 const Profile = ({ userFromServer }) => {
@@ -39,6 +40,11 @@ const Profile = ({ userFromServer }) => {
 					<FormControl>
 						<FormLabel>Nom</FormLabel>
 						<Input value={newUser.name} onChange={(event) => setnewUser((old) => ({ ...old, name: event.target.value }))} />
+					</FormControl>
+
+					<FormControl>
+					<FormLabel>Prénom</FormLabel>
+						<Input value={newUser?.firstname} onChange={(event) => setnewUser((old) => ({ ...old, firstname: event.target.value }))} />
 					</FormControl>
 
 					<Button colorScheme="purple" isDisabled={!isModified || !userSchema.safeParse(newUser).success}>
