@@ -3,8 +3,9 @@ import { signOut } from "next-auth/react"
 import { useRouter } from "next/router"
 import { AiOutlinePlus } from "react-icons/ai"
 import { FcCallback, FcOpenedFolder, FcReddit, FcExport } from "react-icons/fc"
+import { Box } from "@chakra-ui/react"
 
-const Sidebar = () => {
+const Sidebar = ({ display }) => {
 	const router = useRouter()
 	const navigation = [
 		{
@@ -41,7 +42,7 @@ const Sidebar = () => {
 	]
 
 	return (
-		<>
+		<Box display={display}>
 			<nav className="fixed top-0 left-0 h-full border-r border-[#333C4B] bg-#1f2937 space-y-8 w-[250px] px-6 pt-8">
 				<div className="flex flex-col h-full">
 					<div className="h-20 flex items-center px-8 mb-6">
@@ -93,7 +94,7 @@ const Sidebar = () => {
 					</div>
 				</div>
 			</nav>
-		</>
+		</Box>
 	)
 }
 

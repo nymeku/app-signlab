@@ -1,11 +1,12 @@
 import prisma from "@/lib/prisma"
 
 export const getUserBySession = async (session) => {
+	console.log({ session })
 	if (session?.user?.id) {
 		return getUserById(session.user?.id)
 	} else if (session?.user?.email) {
 		return getUserByEmail(session.user.email)
-	} else return false
+	} else return null
 }
 
 export const getUserById = async (id) => {
@@ -13,9 +14,8 @@ export const getUserById = async (id) => {
 		where: {
 			id,
 		},
-		select: {
-			email: true,
-			name: true,
+		include: {
+			traductions: true,
 		},
 	})
 }
@@ -25,9 +25,8 @@ export const getUserByEmail = async (email) => {
 		where: {
 			email,
 		},
-		select: {
-			email: true,
-			name: true,
+		include: {
+			traductions: true,
 		},
 	})
 }

@@ -47,11 +47,13 @@ const Navbar = () => {
 									</li>
 								)
 							})}
-							<li>
-								<Button colorScheme="purple" onClick={() => router.push("/app")}>
-									Traduire
-								</Button>
-							</li>
+							{user && (
+								<li>
+									<Button colorScheme="purple" onClick={() => router.push("/app")}>
+										Traduire
+									</Button>
+								</li>
+							)}
 						</ul>
 						<div className="gap-x-6 items-center justify-end mt-6 space-y-6 md:flex md:space-y-0 md:mt-0">
 							{user ? (
