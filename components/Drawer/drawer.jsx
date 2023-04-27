@@ -6,6 +6,7 @@ import { AiOutlinePlus } from "react-icons/ai"
 import { FcOpenedFolder, FcReddit, FcCallback } from "react-icons/fc"
 import { useRouter } from "next/router"
 import Link from "next/link"
+import { Avatar } from "@chakra-ui/react"
 
 function DrawerComponent({ display }) {
 	const { isOpen, onOpen, onClose } = useDisclosure()
@@ -92,10 +93,10 @@ function DrawerComponent({ display }) {
 								</ul>
 								<div className="py-4 px-4 border-t border-[#333C4B]">
 									<div className="flex items-center gap-x-4">
-										<img src="https://randomuser.me/api/portraits/women/79.jpg" className="w-12 h-12 rounded-full" />
+										<Avatar />
 										<div>
 											<span className="block text-white text-sm font-semibold">Arnaud Andrieu</span>
-											<Link href="/profile" className="block mt-px text-white hover:text-indigo-600 text-xs">
+											<Link href="/app/profil" className="block mt-px text-white hover:text-indigo-600 text-xs">
 												Mon profil
 											</Link>
 										</div>
