@@ -1,45 +1,28 @@
 import AppLayout from "@/components/AppLayout"
 import { Box, Heading, Button } from "@chakra-ui/react"
-import React, { useEffect } from "react"
+import React from "react"
 
 const Translation = () => {
-let camera_stream = null;
-let media_recorder = null;
-let blobs_recorded = [];
+	const launchVideo = () => {
+        var video = document.querySelector("#video");
+        if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function (stream) {
+                    video.srcObject = stream;
+                })
+                .catch(function (err0r) {
+                    console.log("Something went wrong!");
+                });
+        }
+    }
 
-useEffect(() => {
-	let video = document.querySelector("#video");
-	let start_button = document.querySelector("#start-record");
-	let stop_button = document.querySelector("#stop-record");
-
-	const resetAll = () => {
-		blobs_recorded = [];
-		video.srcObject = null;
-		video.src = null;
-		camera_stream = null;
-		media_recorder = null;
-	}
-
-	const prepareRecording = async () => {
-
-	start_button.addEventListener('click', async function() {
-		camera_stream = await navigator.mediaDevices.getUserMedia({ video: true });
-		video.srcObject = camera_stream;
-		media_recorder = new MediaRecorder(camera_stream, { mimeType: 'video/webm' });
-	
-		media_recorder.addEventListener('dataavailable', function(e) {
-			blobs_recorded.push(e.data);
+	const stopVideo = () => {
+		var video = document.querySelector("#video");
+		video.srcObject.getTracks().forEach(function (track) {
+			track.stop();
 		});
-	
-		media_recorder.start(1000);
-	});
-	
-	stop_button.addEventListener('click', function() {
-		resetAll()
-	});}
-
-	prepareRecording()
-}, [])
+		video.srcObject = null;
+	}
 
 	return (
 		<AppLayout>
@@ -49,11 +32,11 @@ useEffect(() => {
 				<video id="video" width="320" height="240" autoPlay></video>
 
 				
-					<Button colorScheme={"red"} id="stop-record">
+					<Button colorScheme={"red"} id="stop-record" onClick={() => stopVideo()}>
 						Stop
 					</Button>
 		
-					<Button colorScheme="purple" id="start-record">
+					<Button colorScheme="purple" id="start-record" onClick={() => launchVideo()}>
 						Démarrer
 					</Button>
 	
