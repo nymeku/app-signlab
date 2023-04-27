@@ -4,33 +4,39 @@ import { Box, Heading, HStack, Button } from "@chakra-ui/react"
 import React, { useEffect, useState } from "react"
 
 const Translation = () => {
-	const [blobs, setBlobs] = React.useState([])
-	const [stop, setStop] = React.useState(false)
-	let video = null 
-	useEffect(() => {
-		video = document.querySelector("#video")
-	}, [])
+let camera_stream = null;
+let media_recorder = null;
+let blobs_recorded = [];
 
-	const stopStream = () => {
-		const download = URL.createObjectURL(new Blob(blobs, { type: "video/webm" }))
-		console.log(download)
-	}
+useEffect(() => {
+	let video = document.querySelector("#video");
+	let start_button = document.querySelector("#start-record");
+	let stop_button = document.querySelector("#stop-record");
 
-	const startStream = async (permission) => {
-		video.srcObject = permission
-		const record = new MediaRecorder(permission, { mimeType: "video/webm" })
-		record.addEventListener('dataavailable', (e) => {
-			if (e.data.size > 0) {
-				setBlobs([...blobs, e.data])
-			}
-		})
-		record.start()
-	}
+	const prepareRecording = async () => {
 
-	const askPermission = async () => {	
-		const permission = await navigator.mediaDevices.getUserMedia({video: true})		
-		startStream(permission)
-	}
+	start_button.addEventListener('click', async function() {
+		camera_stream = await navigator.mediaDevices.getUserMedia({ video: true });
+		video.srcObject = camera_stream;
+		// set MIME type of recording as video/webm
+		media_recorder = new MediaRecorder(camera_stream, { mimeType: 'video/webm' });
+	
+		// event : new recorded video blob available 
+		media_recorder.addEventListener('dataavailable', function(e) {
+			blobs_recorded.push(e.data);
+		});
+	
+		// start recording with each recorded blob having 1 second video
+		media_recorder.start(1000);
+	});
+	
+	stop_button.addEventListener('click', function() {
+		console.log('stopping recording')
+		media_recorder.stop(); 
+	});}
+
+	prepareRecording()
+}, [])
 
 	return (
 		<AppLayout>
@@ -39,15 +45,15 @@ const Translation = () => {
 
 				<video id="video" width="320" height="240" autoPlay></video>
 
-				{false ? (
-					<Button colorScheme={"red"} onClick={() => stopStream()}>
+				
+					<Button colorScheme={"red"} id="stop-record">
 						{"Stop"}
 					</Button>
-				) : (
-					<Button colorScheme="purple" onClick={() => askPermission()}>
+		
+					<Button colorScheme="purple" id="start-record">
 						Démarrer
 					</Button>
-				)}
+	
 			</Box>
 		</AppLayout>
 	)
