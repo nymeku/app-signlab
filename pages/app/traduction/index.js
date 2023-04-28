@@ -1,5 +1,5 @@
 import AppLayout from "@/components/AppLayout"
-import { Box, Heading, Button, ButtonGroup } from "@chakra-ui/react"
+import { Box, Heading, Button, ButtonGroup, Text } from "@chakra-ui/react"
 import React, { useState } from "react"
 
 const Translation = () => {
@@ -37,19 +37,29 @@ const Translation = () => {
 			<Heading fontSize={"lg"}>Nouvelle traduction</Heading>
 
 			<Box display={"flex"} justifyContent={"center"} flexDirection={"column"} alignItems={"center"}>
-				{message && <Box display={"flex"} justifyContent={"center"} marginTop={"80px"} marginBottom={"80px"}><p id='text'>{fakeTexte}</p></Box>}
+				{message && (
+					<Box display={"flex"} justifyContent={"center"} marginTop={"80px"} marginBottom={"80px"}>
+						<Text id="text" fontSize={"xl"}>
+							{fakeTexte}
+						</Text>
+					</Box>
+				)}
 
-				{!message && <Box transform={"scaleX(-1)"} display={"flex"} justifyContent={"center"} marginBottom={"20px"}>
-					<video id="video" width="700" height="700" autoPlay></video>
-				</Box>}
+				{!message && (
+					<Box transform={"scaleX(-1)"} display={"flex"} justifyContent={"center"} marginBottom={"20px"}>
+						<video id="video" width="700" height="700" autoPlay></video>
+					</Box>
+				)}
 
 				<ButtonGroup>
-					{!message && <Button colorScheme={"red"} id="stop-record" onClick={() => stopVideo()}>
-						Stop
-					</Button>}
+					{!message && (
+						<Button colorScheme={"red"} id="stop-record" onClick={() => stopVideo()}>
+							Stop
+						</Button>
+					)}
 
 					<Button colorScheme="purple" id="start-record" onClick={() => launchVideo()}>
-					{!message ? 'Démarrer':'Redémarrer'}
+						{!message ? "Démarrer" : "Redémarrer"}
 					</Button>
 				</ButtonGroup>
 			</Box>

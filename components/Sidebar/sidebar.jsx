@@ -90,9 +90,9 @@ const Sidebar = ({ display, user }) => {
 								<div className="flex items-center gap-x-4">
 									<Avatar name={user?.name} />
 									<div>
-										<span className="block text-white text-sm font-semibold">Arnaud Andrieu</span>
+										{/* <span className="block text-white text-sm font-semibold"></span> */}
 										<Link href="/app/profil" className="block mt-px text-white hover:text-indigo-600 text-xs">
-											Mon profil
+											Compléter mon profil
 										</Link>
 									</div>
 								</div>
