@@ -1,9 +1,13 @@
 import AppLayout from "@/components/AppLayout"
 import { Box, Heading, Button, ButtonGroup } from "@chakra-ui/react"
-import React from "react"
+import React, { useState } from "react"
 
 const Translation = () => {
+	const [message, setMessage] = useState(false)
+	const fakeTexte = "Bonjour, je m'appelle Jean, j'ai besoin d'aide pour retrouver le quai 7 de la gare d'Austerlitz. Pouvez-vous m'indiquer le chemin ?"
+
 	const launchVideo = () => {
+		setMessage(false)
 		var video = document.querySelector("#video")
 		if (navigator.mediaDevices.getUserMedia) {
 			navigator.mediaDevices
@@ -18,6 +22,7 @@ const Translation = () => {
 	}
 
 	const stopVideo = () => {
+		setMessage(true)
 		var video = document.querySelector("#video")
 		if (video.srcObject) {
 			video.srcObject.getTracks().forEach(function (track) {
@@ -32,17 +37,19 @@ const Translation = () => {
 			<Heading fontSize={"lg"}>Nouvelle traduction</Heading>
 
 			<Box display={"flex"} justifyContent={"center"} flexDirection={"column"} alignItems={"center"}>
-				<Box transform={"scaleX(-1)"} display={"flex"} justifyContent={"center"} marginBottom={"20px"}>
+				{message && <Box display={"flex"} justifyContent={"center"} marginTop={"80px"} marginBottom={"80px"}><p id='text'>{fakeTexte}</p></Box>}
+
+				{!message && <Box transform={"scaleX(-1)"} display={"flex"} justifyContent={"center"} marginBottom={"20px"}>
 					<video id="video" width="700" height="700" autoPlay></video>
-				</Box>
+				</Box>}
 
 				<ButtonGroup>
-					<Button colorScheme={"red"} id="stop-record" onClick={() => stopVideo()}>
+					{!message && <Button colorScheme={"red"} id="stop-record" onClick={() => stopVideo()}>
 						Stop
-					</Button>
+					</Button>}
 
 					<Button colorScheme="purple" id="start-record" onClick={() => launchVideo()}>
-						Démarrer
+					{!message ? 'Démarrer':'Redémarrer'}
 					</Button>
 				</ButtonGroup>
 			</Box>
