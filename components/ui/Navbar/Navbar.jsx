@@ -59,7 +59,7 @@ const Navbar = () => {
 								<Avatar name={user.name ? user.name : ""} />
 							) : (
 								<>
-									<Link href="/login" className="block hover:text-gray-50">
+									<Link href="/login" className="block hover:text-gray-50" id="login-button">
 										Se connecter
 									</Link>
 
